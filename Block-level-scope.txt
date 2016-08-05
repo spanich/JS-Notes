@@ -1,0 +1,14 @@
+Block-level Scope:
+
+var outsideExample = "First string";
+if (true) {
+    var outsideExample = "Second string";
+    console.log(outsideExample);
+}
+console.log(outsideExample);
+
+The first console.log() obviously logs "Second string" as it comes right after we set the value of outsideExample to "Second string". But what about the second console.log()?
+
+Remember, if statements do not create their own scope. Unlike the last quiz, where we created a totally new variable inside a function, the if statement does not create a new variable. It simply overwrites the value of outsideExample to "Second string".
+
+So, the second time we console.log(), we see "Second string" again.
